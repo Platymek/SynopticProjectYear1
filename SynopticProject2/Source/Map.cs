@@ -5,7 +5,7 @@ using System.Text;
 
 namespace synopticProject.Source
 {
-    internal class Map
+    public class Map
     {
         public Vector2 Position { get; private set; }
 
@@ -15,9 +15,14 @@ namespace synopticProject.Source
             throw new OrganismNotFoundException(name);
         }
 
-        public Location GetNearestLocation(Vector2 position)
+        public static Location GetNearestLocation(Vector2 position)
+            
         {
-            Location nearestLocation = Locations[0];
+
+            Location nearestLocation;
+
+            //Temp, testing
+            return new Location(new Vector2((float)122.1, (float)57.4));
 
             foreach (Location currentLocation in Locations)
             {

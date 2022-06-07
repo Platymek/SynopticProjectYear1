@@ -4,7 +4,7 @@ using System.Text;
 
 namespace synopticProject.Source
 {
-    internal class Relationship
+    public class Relationship
     {
         public enum RelationshipType
         {

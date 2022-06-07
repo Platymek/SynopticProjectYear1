@@ -4,7 +4,7 @@ using System.Text;
 
 namespace synopticProject.Source
 {
-    internal abstract class Organism
+    public abstract class Organism
     {
 
         public enum SeverityType

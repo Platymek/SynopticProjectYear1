@@ -5,7 +5,7 @@ using System.Text;
 
 namespace synopticProject.Source
 {
-    internal class Location
+    public class Location
     {
         public Organism[] Organisms { get; private set; }
         public Vector2 Position { get; private set; }
@@ -26,6 +26,11 @@ namespace synopticProject.Source
             Radius = radius;
             Name = name;
             LocationType = locationType;
+        }
+
+        public Location(Vector2 position)
+        {
+            Position = position;
         }
 
         // Since only a list of actors, I linear search through either fauna or flora and get them all and return them as a list.
