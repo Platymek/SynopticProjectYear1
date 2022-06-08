@@ -21,7 +21,7 @@ namespace synopticProject.Source
             DangerType danger, 
             Relationship[] relationships) 
             : base(name, description, severity, danger, relationships)
-        {}
+        { }
 
         /// <summary>
         /// The constructer for animals/fauna for those who do not wish to write at all specific relationships
@@ -38,7 +38,24 @@ namespace synopticProject.Source
             DangerType danger,
             Organism[] dependentOrganisms)
             : base(name, description, severity, danger, dependentOrganisms)
-        {}
+        { }
+
+        /// <summary>
+        /// The constructer for animals/fauna for those who do not wish to write at all specific relationships
+        /// </summary>
+        /// <param name="name">Animal Name</param>
+        /// <param name="description">Animal Description e.g. describing what it looks like</param>
+        /// <param name="severity">How severely endangered this animal is</param>
+        /// <param name="danger">How dangerous this animal is</param>
+        /// <param name="dependentOrganisms">The organisms this animal depends on</param>
+        public Fauna(
+            string name,
+            string description,
+            int severity,
+            int danger,
+            Organism[] dependentOrganisms)
+            : base(name, description, severity, danger, dependentOrganisms)
+        { }
 
         public override string DangerDescriptionToString()
         {

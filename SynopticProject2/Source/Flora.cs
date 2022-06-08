@@ -34,8 +34,8 @@ namespace synopticProject.Source
         public Flora(
             string name,
             string description,
-            SeverityType severity,
-            DangerType danger,
+            int severity,
+            int danger,
             Organism[] dependentOrganisms)
             : base(name, description, severity, danger, dependentOrganisms)
         { }
