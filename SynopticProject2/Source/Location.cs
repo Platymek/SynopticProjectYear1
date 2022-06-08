@@ -28,11 +28,6 @@ namespace synopticProject.Source
             LocationType = locationType;
         }
 
-        public Location(Vector2 position)
-        {
-            Position = position;
-        }
-
         // Since only a list of actors, I linear search through either fauna or flora and get them all and return them as a list.
         public Organism GetOrganism(string name)
         {

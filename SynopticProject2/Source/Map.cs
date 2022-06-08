@@ -19,10 +19,7 @@ namespace synopticProject.Source
             
         {
 
-            Location nearestLocation;
-
-            //Temp, testing
-            return new Location(new Vector2((float)122.1, (float)57.4));
+            Location nearestLocation = Locations[0];
 
             foreach (Location currentLocation in Locations)
             {

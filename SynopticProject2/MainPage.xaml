@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SynopticProject2.MainPage">
+             x:Class="SynopticProject2.MainPage"
+             xmlns:mapsui="clr-namespace:Mapsui.UI.Forms;assembly=Mapsui.UI.Forms">
 
     <StackLayout>
         <Button Text="Click me" Clicked="Button_Clicked"/>
+
+        <mapsui:MapView x:Name="mapView"
+         VerticalOptions="FillAndExpand"
+         HorizontalOptions="Fill"
+         BackgroundColor="Gray" />
     </StackLayout>
 
 </ContentPage>
