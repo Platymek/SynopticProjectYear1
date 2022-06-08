@@ -19,7 +19,7 @@ namespace synopticProject.Source
             UNKNOWN
         }
 
-        public Location(Organism[] organisms, Vector2 position, int radius, string name, LocationIndex locationType = LocationIndex.UNKNOWN)
+        public Location(string name, Vector2 position, int radius, Organism[] organisms, LocationIndex locationType = LocationIndex.UNKNOWN)
         {
             Organisms = organisms;
             Position = position;
