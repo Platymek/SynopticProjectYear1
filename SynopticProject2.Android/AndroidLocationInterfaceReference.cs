@@ -27,9 +27,8 @@ namespace SynopticProject2.Droid
 
                     if (location != null)
                     {
-                    Console.WriteLine("testing ");
-                    return new decimal[] { (decimal)location.Latitude, (decimal)location.Longitude, (decimal)location.Altitude };
-                    
+                        Console.WriteLine("testing ");
+                        return new decimal[] { (decimal)location.Latitude, (decimal)location.Longitude, (decimal)location.Altitude };
                     }
                 }
                 catch (FeatureNotSupportedException fnsEx)

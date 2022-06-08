@@ -75,6 +75,7 @@ namespace synopticProject.Source
         public static Location[] Locations { get; private set; } = new Location[]
         {
             // TODO: Add all locations
+            new Location(new Organism[]{ }, Vector2.Zero, 1, "example")
         };
     }
 

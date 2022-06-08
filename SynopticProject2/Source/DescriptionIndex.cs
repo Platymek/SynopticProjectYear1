@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SynopticProject2.Source
 {
-    internal static class DescriptionIndex
+    internal class DescriptionIndex
     {
         public static string[] Descriptions = new string[]
         {
@@ -46,7 +46,6 @@ namespace SynopticProject2.Source
             "The inflorescences are axillary and pedunculate, flowers are either solitary or in racemes or panicles. Male flowers may be 4- or 5-merous and the female flowers are 4-merous. Most species are dioecious, a small number are monoecious.",
             "",
             ""
-
         };
     }
 }
