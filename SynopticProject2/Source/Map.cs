@@ -12,11 +12,29 @@ namespace synopticProject.Source
         public static Organism GetOrganism(string name)
         {
             foreach (Organism o in Organisms) if (o.Name.Equals(name)) return o;
-            throw new OrganismNotFoundException(name);
+            //throw new OrganismNotFoundException(name);
+            return null;   
+        }
+
+        public static Location GetLocation(string name)
+        {
+            Console.WriteLine("Input Name: " + name);
+            foreach (Location locationToCheck in Locations)
+            {
+                Console.WriteLine("Location to check: " + locationToCheck.Name);
+                if (locationToCheck.Name == name)
+                {
+                    Console.WriteLine("Returning: " + locationToCheck.Name);
+                    return locationToCheck;
+                }
+            }
+            return null;
         }
 
         public static Location GetNearestLocation(Vector2 position)
         {
+            Console.WriteLine("Getting nearest Location");
+            
             Location nearestLocation = Locations[0];
 
             foreach (Location currentLocation in Locations)
@@ -29,116 +47,6 @@ namespace synopticProject.Source
             
             return nearestLocation;
         }
-
-        public static Organism[] Organisms { get; private set; } = new Organism[]
-        {
-            // TODO: Add all organisms
-            
-            new Fauna("Wallaby",                    Descriptions[00], 0, 0, new Organism[]{ }),
-            new Fauna("Antilopine Wallaroo",        Descriptions[01], 0, 0, new Organism[]{ }),
-            new Fauna("Spotted Cuscus",             Descriptions[02], 0, 0, new Organism[]{ }),
-            new Fauna("Saltwater Crocodile",        Descriptions[03], 0, 1, new Organism[]{ }),
-            new Fauna("Cane Toad",                  Descriptions[04], 0, 1, new Organism[]{ }),
-            new Fauna("Dingo",                      Descriptions[05], 1, 1, new Organism[]{ }),
-            new Fauna("Possum",                     Descriptions[06], 0, 0, new Organism[]{ }),
-            new Fauna("Feral Cattle",               Descriptions[07], 0, 0, new Organism[]{ }),
-            new Fauna("Feral Horse",                Descriptions[08], 0, 0, new Organism[]{ }),
-            new Fauna("Feral Pig",                  Descriptions[09], 0, 2, new Organism[]{ }),
-            new Fauna("Tree Kangaroos",             Descriptions[10], 0, 0, new Organism[]{ }),
-            new Fauna("Tree Frog",                  Descriptions[11], 1, 0, new Organism[]{ }),
-            new Fauna("Sunbird",                    Descriptions[12], 1, 0, new Organism[]{ }),
-            new Fauna("Bush Turkey" ,               Descriptions[13], 0, 0, new Organism[]{ }),
-            new Fauna("Amethystine Python",         Descriptions[14], 0, 0, new Organism[]{ }),
-            new Fauna("Imperial Pigeons",           Descriptions[15], 0, 0, new Organism[]{ }),
-            new Fauna("Morepork",                   Descriptions[16], 0, 0, new Organism[]{ }),
-            new Fauna("Riflemen",                   Descriptions[17], 0, 0, new Organism[]{ }),
-            new Fauna("Bare-Rumped SheathTail Bat", Descriptions[18], 0, 0, new Organism[]{ }),
-            new Fauna("Cassowary",                  Descriptions[19], 1, 2, new Organism[]{ }),
-            new Fauna("Electus Parrot",             Descriptions[20], 0, 0, new Organism[]{ }),
-            new Fauna("Skink",                      Descriptions[21], 0, 0, new Organism[]{ }),
-            new Fauna("Buff Breasted Kingfisher",   Descriptions[22], 0, 0, new Organism[]{ }),
-            new Flora("Ant Plant",                  Descriptions[23], 1, 0, new Organism[]{ }),
-            new Flora("Ancient Cycad",              Descriptions[24], 1, 2, new Organism[]{ }),
-            new Flora("Ironbark Eucalyptus",        Descriptions[25], 1, 0, new Organism[]{ }),
-            new Flora("Wild Cherry",                Descriptions[26], 0, 0, new Organism[]{ }),
-            new Flora("Fan Palm",                   Descriptions[27], 0, 0, new Organism[]{ }),
-            new Flora("Strangler Fig",              Descriptions[28], 0, 0, new Organism[]{ }),
-            new Flora("Stinging Tree",              Descriptions[29], 0, 0, new Organism[]{ }),
-            new Flora("Melaleuca",                  Descriptions[30], 0, 0, new Organism[]{ }),
-            new Flora("Stringybark",                Descriptions[31], 0, 1, new Organism[]{ }),
-            new Flora("Wattle",                     Descriptions[32], 0, 0, new Organism[]{ }),
-            new Flora("Termite Mounds",             Descriptions[33], 0, 0, new Organism[]{ }),
-            new Flora("Fern",                       Descriptions[34], 0, 0, new Organism[]{ }),
-            new Flora("orchid",                     Descriptions[35], 0, 0, new Organism[]{ }),
-        };
-
-        public static Location[] Locations { get; private set; } = new Location[]
-        {
-            // TODO: Add all locations
-            new Location("Iron Range", new Vector2(12.5975f, 143.4111f), 1, new Organism[]
-            { 
-                GetOrganism("Spotted Cuscus"),
-                GetOrganism("Saltwater Crocodile"),
-                GetOrganism("Riflemen"),
-                GetOrganism("Bare-Rumped Sheathtail Bat"),
-                GetOrganism("Cassowary"),
-                GetOrganism("Eclectus Parrot"),
-                GetOrganism("Ant Plant"),
-                GetOrganism("Fern"),
-                GetOrganism("Orchid"),
-            }),
-            new Location("Daintree Rainforest", new Vector2(16.1700f, 145.4185f),       1, new Organism[]
-            { 
-                GetOrganism("Cane Toad"),
-                GetOrganism("Dingo"),
-                GetOrganism("Possum"),
-                GetOrganism("Tree Kangaroos"),
-                GetOrganism("Tree Frog"),
-                GetOrganism("Bush Turkey"),
-                GetOrganism("Imperial Pigeon"),
-                GetOrganism("Cassowary"),
-                GetOrganism("Fan Palm"),
-                GetOrganism("Strangler Fig"),
-                GetOrganism("Stinging Tree")
-            }),
-            new Location("Lakefield",           new Vector2(-15.53092f, 143.75705f),    1, new Organism[]
-            { 
-                GetOrganism("Wallaby"),
-                GetOrganism("Saltwater Crocodile"),
-                GetOrganism("Cane Toad"),
-                GetOrganism("Dingo"),
-                GetOrganism("Possum"),
-                GetOrganism("Feral Cattle"),
-                GetOrganism("Feral Horse"),
-                GetOrganism("Feral Pig"),
-                GetOrganism("Tree Frog"),
-                GetOrganism("Melaleuca"),
-                GetOrganism("StringyBark"),
-                GetOrganism("Wattle")
-            }),
-            new Location("Oyala Thumotang",     new Vector2(-13.684401f, 142.887187f),  1, new Organism[]
-            { 
-                GetOrganism("Wallaby"),
-                GetOrganism("Antilopine Wallaroo"),
-                GetOrganism("Spotted Cuscus"),
-                GetOrganism("Saltwater Crocodile"),
-                GetOrganism("Melaleuca"),
-                GetOrganism("Eucalyptus"),
-                GetOrganism("Termite Mound")
-            }),
-            new Location("Mt Cook",          new Vector2(-43.733333f, 170.100000f),  1, new Organism[]
-            {
-                GetOrganism("Bush Turkey"),
-                GetOrganism("Amethystine Pyhton"),
-                GetOrganism("Imperial Pigeon"),
-                GetOrganism("Morepork"),
-                GetOrganism("Skink"),
-                GetOrganism("Buff Breasted Kingfisher"),
-                GetOrganism("Ancient Cycad"),
-                GetOrganism("Ironbark Eucalyptus"),
-                GetOrganism("Wild Cherry"),
-            }),
-        };
 
         private static string[] Descriptions = new string[]
         {
@@ -181,6 +89,120 @@ namespace synopticProject.Source
             "",
             ""
         };
+
+        public static Organism[] Organisms { get; private set; } = new Organism[]
+    {
+            // TODO: Add all organisms
+            
+            new Fauna("Wallaby",                    Descriptions[00], 0, 0, new Organism[]{ }),
+            new Fauna("Antilopine Wallaroo",        Descriptions[01], 0, 0, new Organism[]{ }),
+            new Fauna("Spotted Cuscus",             Descriptions[02], 0, 0, new Organism[]{ }),
+            new Fauna("Saltwater Crocodile",        Descriptions[03], 0, 1, new Organism[]{ }),
+            new Fauna("Cane Toad",                  Descriptions[04], 0, 1, new Organism[]{ }),
+            new Fauna("Dingo",                      Descriptions[05], 1, 1, new Organism[]{ }),
+            new Fauna("Possum",                     Descriptions[06], 0, 0, new Organism[]{ }),
+            new Fauna("Feral Cattle",               Descriptions[07], 0, 0, new Organism[]{ }),
+            new Fauna("Feral Horse",                Descriptions[08], 0, 0, new Organism[]{ }),
+            new Fauna("Feral Pig",                  Descriptions[09], 0, 2, new Organism[]{ }),
+            new Fauna("Tree Kangaroos",             Descriptions[10], 0, 0, new Organism[]{ }),
+            new Fauna("Tree Frog",                  Descriptions[11], 1, 0, new Organism[]{ }),
+            new Fauna("Sunbird",                    Descriptions[12], 1, 0, new Organism[]{ }),
+            new Fauna("Bush Turkey" ,               Descriptions[13], 0, 0, new Organism[]{ }),
+            new Fauna("Amethystine Python",         Descriptions[14], 0, 0, new Organism[]{ }),
+            new Fauna("Imperial Pigeons",           Descriptions[15], 0, 0, new Organism[]{ }),
+            new Fauna("Morepork",                   Descriptions[16], 0, 0, new Organism[]{ }),
+            new Fauna("Riflemen",                   Descriptions[17], 0, 0, new Organism[]{ }),
+            new Fauna("Bare-Rumped Sheathtail Bat", Descriptions[18], 0, 0, new Organism[]{ }),
+            new Fauna("Cassowary",                  Descriptions[19], 1, 2, new Organism[]{ }),
+            new Fauna("Electus Parrot",             Descriptions[20], 0, 0, new Organism[]{ }),
+            new Fauna("Skink",                      Descriptions[21], 0, 0, new Organism[]{ }),
+            new Fauna("Buff Breasted Kingfisher",   Descriptions[22], 0, 0, new Organism[]{ }),
+            new Flora("Ant Plant",                  Descriptions[23], 1, 0, new Organism[]{ }),
+            new Flora("Ancient Cycad",              Descriptions[24], 1, 2, new Organism[]{ }),
+            new Flora("Ironbark Eucalyptus",        Descriptions[25], 1, 0, new Organism[]{ }),
+            new Flora("Wild Cherry",                Descriptions[26], 0, 0, new Organism[]{ }),
+            new Flora("Fan Palm",                   Descriptions[27], 0, 0, new Organism[]{ }),
+            new Flora("Strangler Fig",              Descriptions[28], 0, 0, new Organism[]{ }),
+            new Flora("Stinging Tree",              Descriptions[29], 0, 0, new Organism[]{ }),
+            new Flora("Melaleuca",                  Descriptions[30], 0, 0, new Organism[]{ }),
+            new Flora("Stringybark",                Descriptions[31], 0, 1, new Organism[]{ }),
+            new Flora("Wattle",                     Descriptions[32], 0, 0, new Organism[]{ }),
+            new Flora("Termite Mounds",             Descriptions[33], 0, 0, new Organism[]{ }),
+            new Flora("Fern",                       Descriptions[34], 0, 0, new Organism[]{ }),
+            new Flora("Orchid",                     Descriptions[35], 0, 0, new Organism[]{ }),
+    };
+
+
+        public static Location[] Locations { get; private set; } = new Location[]
+        {
+            // TODO: Add all locations
+            new Location("Iron Range", new Vector2(12.5975f, 143.4111f), 1, new Organism[]
+            { 
+                GetOrganism("Spotted Cuscus"),
+                GetOrganism("Saltwater Crocodile"),
+                GetOrganism("Riflemen"),
+                GetOrganism("Bare-Rumped Sheathtail Bat"),
+                GetOrganism("Cassowary"),
+                GetOrganism("Electus Parrot"),
+                GetOrganism("Ant Plant"),
+                GetOrganism("Fern"),
+                GetOrganism("Orchid"),
+            }),
+            new Location("Daintree Rainforest", new Vector2(16.1700f, 145.4185f),       1, new Organism[]
+            { 
+                GetOrganism("Cane Toad"),
+                GetOrganism("Dingo"),
+                GetOrganism("Possum"),
+                GetOrganism("Tree Kangaroos"),
+                GetOrganism("Tree Frog"),
+                GetOrganism("Bush Turkey"),
+                GetOrganism("Imperial Pigeon"),
+                GetOrganism("Cassowary"),
+                GetOrganism("Fan Palm"),
+                GetOrganism("Strangler Fig"),
+                GetOrganism("Stinging Tree")
+            }),
+            new Location("Lakefield",           new Vector2(-15.53092f, 143.75705f),    1, new Organism[]
+            { 
+                GetOrganism("Wallaby"),
+                GetOrganism("Saltwater Crocodile"),
+                GetOrganism("Cane Toad"),
+                GetOrganism("Dingo"),
+                GetOrganism("Possum"),
+                GetOrganism("Feral Cattle"),
+                GetOrganism("Feral Horse"),
+                GetOrganism("Feral Pig"),
+                GetOrganism("Tree Frog"),
+                GetOrganism("Melaleuca"),
+                GetOrganism("Stringybark"),
+                GetOrganism("Wattle")
+            }),
+            new Location("Oyala Thumotang",     new Vector2(-13.684401f, 142.887187f),  1, new Organism[]
+            { 
+                GetOrganism("Wallaby"),
+                GetOrganism("Antilopine Wallaroo"),
+                GetOrganism("Spotted Cuscus"),
+                GetOrganism("Saltwater Crocodile"),
+                GetOrganism("Melaleuca"),
+                GetOrganism("Eucalyptus"),
+                GetOrganism("Termite Mound")
+            }),
+            new Location("Mt Cook",          new Vector2(-43.733333f, 170.100000f),  1, new Organism[]
+            {
+                GetOrganism("Bush Turkey"),
+                GetOrganism("Amethystine Python"),
+                GetOrganism("Imperial Pigeons"),
+                GetOrganism("Morepork"),
+                GetOrganism("Skink"),
+                GetOrganism("Buff Breasted Kingfisher"),
+                GetOrganism("Ancient Cycad"),
+                GetOrganism("Ironbark Eucalyptus"),
+                GetOrganism("Wild Cherry"),
+            }),
+        };
+
+    
+        
     }
 
 }

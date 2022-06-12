@@ -57,6 +57,8 @@ namespace synopticProject.Source
             : base(name, description, severity, danger, dependentOrganisms)
         { }
 
+      
+
         public override string DangerDescriptionToString()
         {
             switch (Danger)

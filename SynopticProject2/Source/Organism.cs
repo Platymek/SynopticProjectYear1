@@ -6,6 +6,8 @@ namespace synopticProject.Source
 {
     public abstract class Organism
     {
+        private int severity;
+        private int danger;
 
         public enum SeverityType
         {
