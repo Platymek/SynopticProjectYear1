@@ -28,117 +28,6 @@ namespace synopticProject.Source
             return nearestLocation;
         }
 
-        public static Organism[] Organisms { get; private set; } = new Organism[]
-        {
-            // TODO: Add all organisms
-            
-            new Fauna("Wallaby",                    Descriptions[00], 0, 0),
-            new Fauna("Antilopine Wallaroo",        Descriptions[01], 0, 0),
-            new Fauna("Spotted Cuscus",             Descriptions[02], 0, 0),
-            new Fauna("Saltwater Crocodile",        Descriptions[03], 0, 1),
-            new Fauna("Cane Toad",                  Descriptions[04], 0, 1),
-            new Fauna("Dingo",                      Descriptions[05], 1, 1),
-            new Fauna("Possum",                     Descriptions[06], 0, 0),
-            new Fauna("Feral Cattle",               Descriptions[07], 0, 0),
-            new Fauna("Feral Horse",                Descriptions[08], 0, 0),
-            new Fauna("Feral Pig",                  Descriptions[09], 0, 2),
-            new Fauna("Tree Kangaroos",             Descriptions[10], 0, 0),
-            new Fauna("Tree Frog",                  Descriptions[11], 1, 0),
-            new Fauna("Sunbird",                    Descriptions[12], 1, 0),
-            new Fauna("Bush Turkey" ,               Descriptions[13], 0, 0),
-            new Fauna("Amethystine Python",         Descriptions[14], 0, 0),
-            new Fauna("Imperial Pigeons",           Descriptions[15], 0, 0),
-            new Fauna("Morepork",                   Descriptions[16], 0, 0),
-            new Fauna("Riflemen",                   Descriptions[17], 0, 0),
-            new Fauna("Bare-Rumped SheathTail Bat", Descriptions[18], 0, 0),
-            new Fauna("Cassowary",                  Descriptions[19], 1, 2),
-            new Fauna("Electus Parrot",             Descriptions[20], 0, 0),
-            new Fauna("Skink",                      Descriptions[21], 0, 0),
-            new Fauna("Buff Breasted Kingfisher",   Descriptions[22], 0, 0),
-
-            new Flora("Ant Plant",                  Descriptions[23], 1, 0),
-            new Flora("Ancient Cycad",              Descriptions[24], 1, 2),
-            new Flora("Ironbark Eucalyptus",        Descriptions[25], 1, 0),
-            new Flora("Wild Cherry",                Descriptions[26], 0, 0),
-            new Flora("Fan Palm",                   Descriptions[27], 0, 0),
-            new Flora("Strangler Fig",              Descriptions[28], 0, 0),
-            new Flora("Stinging Tree",              Descriptions[29], 0, 0),
-            new Flora("Melaleuca",                  Descriptions[30], 0, 0),
-            new Flora("Stringybark",                Descriptions[31], 0, 1),
-            new Flora("Wattle",                     Descriptions[32], 0, 0),
-            new Flora("Termite Mounds",             Descriptions[33], 0, 0),
-            new Flora("Fern",                       Descriptions[34], 0, 0),
-            new Flora("orchid",                     Descriptions[35], 0, 0),
-        };
-
-        public static Location[] Locations { get; private set; } = new Location[]
-        {
-            // TODO: Add all locations
-            new Location("Iron Range", new Vector2(12.5975f, 143.4111f), 1, new Organism[]
-            { 
-                GetOrganism("Spotted Cuscus"),
-                GetOrganism("Saltwater Crocodile"),
-                GetOrganism("Riflemen"),
-                GetOrganism("Bare-Rumped Sheathtail Bat"),
-                GetOrganism("Cassowary"),
-                GetOrganism("Eclectus Parrot"),
-                GetOrganism("Ant Plant"),
-                GetOrganism("Fern"),
-                GetOrganism("Orchid"),
-            }),
-            new Location("Daintree Rainforest", new Vector2(16.1700f, 145.4185f),       1, new Organism[]
-            { 
-                GetOrganism("Cane Toad"),
-                GetOrganism("Dingo"),
-                GetOrganism("Possum"),
-                GetOrganism("Tree Kangaroos"),
-                GetOrganism("Tree Frog"),
-                GetOrganism("Bush Turkey"),
-                GetOrganism("Imperial Pigeon"),
-                GetOrganism("Cassowary"),
-                GetOrganism("Fan Palm"),
-                GetOrganism("Strangler Fig"),
-                GetOrganism("Stinging Tree")
-            }),
-            new Location("Lakefield",           new Vector2(-15.53092f, 143.75705f),    1, new Organism[]
-            { 
-                GetOrganism("Wallaby"),
-                GetOrganism("Saltwater Crocodile"),
-                GetOrganism("Cane Toad"),
-                GetOrganism("Dingo"),
-                GetOrganism("Possum"),
-                GetOrganism("Feral Cattle"),
-                GetOrganism("Feral Horse"),
-                GetOrganism("Feral Pig"),
-                GetOrganism("Tree Frog"),
-                GetOrganism("Melaleuca"),
-                GetOrganism("StringyBark"),
-                GetOrganism("Wattle")
-            }),
-            new Location("Oyala Thumotang",     new Vector2(-13.684401f, 142.887187f),  1, new Organism[]
-            { 
-                GetOrganism("Wallaby"),
-                GetOrganism("Antilopine Wallaroo"),
-                GetOrganism("Spotted Cuscus"),
-                GetOrganism("Saltwater Crocodile"),
-                GetOrganism("Melaleuca"),
-                GetOrganism("Eucalyptus"),
-                GetOrganism("Termite Mound")
-            }),
-            new Location("Mt Cook",          new Vector2(-43.733333f, 170.100000f),  1, new Organism[]
-            {
-                GetOrganism("Bush Turkey"),
-                GetOrganism("Amethystine Pyhton"),
-                GetOrganism("Imperial Pigeon"),
-                GetOrganism("Morepork"),
-                GetOrganism("Skink"),
-                GetOrganism("Buff Breasted Kingfisher"),
-                GetOrganism("Ancient Cycad"),
-                GetOrganism("Ironbark Eucalyptus"),
-                GetOrganism("Wild Cherry"),
-            }),
-        };
-
         private static string[] Descriptions = new string[]
         {
             "Although members of most wallaby species are small, some can grow up to approximately two metres in length (from the head to the end of the tail). Their powerful hind legs are not only used for bounding at high speeds and jumping great heights, but also to administer vigorous kicks to fend off potential predators. The tammar wallaby (Notamacropus eugenii) has elastic storage in the ankle extensor tendons, without which the animal's metabolic rate might be 30–50% greater.[5] It has also been found that the design of spring-like tendon energy savings and economical muscle force generation is key for the two distal muscle–tendon units of the tammar wallaby (Macropus-Eugenii).[6] Wallabies also have a powerful tail that is used mostly for balance and support.",
@@ -180,6 +69,118 @@ namespace synopticProject.Source
             "",
             ""
         };
+
+        public static Organism[] Organisms { get; private set; } = new Organism[]
+        {
+            // TODO: Add all organisms
+            
+            new Fauna("Wallaby",                    Descriptions[ 0], 0, 0),
+            new Fauna("Antilopine Wallaroo",        Descriptions[ 1], 0, 0),
+            new Fauna("Spotted Cuscus",             Descriptions[ 2], 0, 0),
+            new Fauna("Saltwater Crocodile",        Descriptions[ 3], 0, 1),
+            new Fauna("Cane Toad",                  Descriptions[ 4], 0, 1),
+            new Fauna("Dingo",                      Descriptions[ 5], 1, 1),
+            new Fauna("Possum",                     Descriptions[ 6], 0, 0),
+            new Fauna("Feral Cattle",               Descriptions[ 7], 0, 0),
+            new Fauna("Feral Horse",                Descriptions[ 8], 0, 0),
+            new Fauna("Feral Pig",                  Descriptions[ 9], 0, 2),
+            new Fauna("Tree Kangaroo",              Descriptions[10], 0, 0),
+            new Fauna("Tree Frog",                  Descriptions[11], 1, 0),
+            new Fauna("Sunbird",                    Descriptions[12], 1, 0),
+            new Fauna("Bush Turkey" ,               Descriptions[13], 0, 0),
+            new Fauna("Amethystine Python",         Descriptions[14], 0, 0),
+            new Fauna("Imperial Pigeon",            Descriptions[15], 0, 0),
+            new Fauna("Morepork",                   Descriptions[16], 0, 0),
+            new Fauna("Riflemen",                   Descriptions[17], 0, 0),
+            new Fauna("Bare-Rumped SheathTail Bat", Descriptions[18], 0, 0),
+            new Fauna("Cassowary",                  Descriptions[19], 1, 2),
+            new Fauna("Electus Parrot",             Descriptions[20], 0, 0),
+            new Fauna("Skink",                      Descriptions[21], 0, 0),
+            new Fauna("Buff Breasted Kingfisher",   Descriptions[22], 0, 0),
+
+            new Flora("Ant Plant",                  Descriptions[23], 1, 0),
+            new Flora("Ancient Cycad",              Descriptions[24], 1, 2),
+            new Flora("Ironbark Eucalyptus",        Descriptions[25], 1, 0),
+            new Flora("Wild Cherry",                Descriptions[26], 0, 0),
+            new Flora("Fan Palm",                   Descriptions[27], 0, 0),
+            new Flora("Strangler Fig",              Descriptions[28], 0, 0),
+            new Flora("Stinging Tree",              Descriptions[29], 0, 0),
+            new Flora("Melaleuca",                  Descriptions[30], 0, 0),
+            new Flora("StringyBark",                Descriptions[31], 0, 1),
+            new Flora("Wattle",                     Descriptions[32], 0, 0),
+            new Flora("Termite Mound",              Descriptions[33], 0, 0),
+            new Flora("Fern",                       Descriptions[34], 0, 0),
+            new Flora("Orchid",                     Descriptions[35], 0, 0),
+        };
+
+        public static Location[] Locations { get; private set; } = new Location[]
+        {
+            // TODO: Add all locations
+            new Location("Iron Range", new Vector2(12.5975f, 143.4111f), 1, new Organism[]
+            { 
+                GetOrganism("Spotted Cuscus"),
+                GetOrganism("Saltwater Crocodile"),
+                GetOrganism("Riflemen"),
+                GetOrganism("Bare-Rumped SheathTail Bat"),
+                GetOrganism("Cassowary"),
+                GetOrganism("Electus Parrot"),
+                GetOrganism("Ant Plant"),
+                GetOrganism("Fern"),
+                GetOrganism("Orchid"),
+            }),
+            new Location("Daintree Rainforest", new Vector2(16.1700f, 145.4185f),       1, new Organism[]
+            { 
+                GetOrganism("Cane Toad"),
+                GetOrganism("Dingo"),
+                GetOrganism("Possum"),
+                GetOrganism("Tree Kangaroo"),
+                GetOrganism("Tree Frog"),
+                GetOrganism("Bush Turkey"),
+                GetOrganism("Imperial Pigeon"),
+                GetOrganism("Cassowary"),
+                GetOrganism("Fan Palm"),
+                GetOrganism("Strangler Fig"),
+                GetOrganism("Stinging Tree")
+            }),
+            new Location("Lakefield",           new Vector2(-15.53092f, 143.75705f),    1, new Organism[]
+            { 
+                GetOrganism("Wallaby"),
+                GetOrganism("Saltwater Crocodile"),
+                GetOrganism("Cane Toad"),
+                GetOrganism("Dingo"),
+                GetOrganism("Possum"),
+                GetOrganism("Feral Cattle"),
+                GetOrganism("Feral Horse"),
+                GetOrganism("Feral Pig"),
+                GetOrganism("Tree Frog"),
+                GetOrganism("Melaleuca"),
+                GetOrganism("StringyBark"),
+                GetOrganism("Wattle")
+            }),
+            new Location("Oyala Thumotang",     new Vector2(-13.684401f, 142.887187f),  1, new Organism[]
+            { 
+                GetOrganism("Wallaby"),
+                GetOrganism("Antilopine Wallaroo"),
+                GetOrganism("Spotted Cuscus"),
+                GetOrganism("Saltwater Crocodile"),
+                GetOrganism("Melaleuca"),
+                GetOrganism("Ironbark Eucalyptus"),
+                GetOrganism("Termite Mound")
+            }),
+            new Location("Mt Cook",          new Vector2(-43.733333f, 170.100000f),  1, new Organism[]
+            {
+                GetOrganism("Bush Turkey"),
+                GetOrganism("Amethystine Python"),
+                GetOrganism("Imperial Pigeon"),
+                GetOrganism("Morepork"),
+                GetOrganism("Skink"),
+                GetOrganism("Buff Breasted Kingfisher"),
+                GetOrganism("Ancient Cycad"),
+                GetOrganism("Ironbark Eucalyptus"),
+                GetOrganism("Wild Cherry"),
+            }),
+        };
+
     }
 
 }
