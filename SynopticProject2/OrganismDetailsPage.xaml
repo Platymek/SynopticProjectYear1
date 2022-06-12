@@ -4,10 +4,23 @@
              x:Class="SynopticProject2.OrganismDetailsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text=""
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
-                   x:Name="Testing"/>
+                   x:Name="OrganismName"/>
+            <Label Text=""
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   x:Name="OrganismDescription"/>
+            <Label Text=""
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   x:Name="OrganismSeverity"/>
+
+            <Label Text=""
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   x:Name="OrganismDanger"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

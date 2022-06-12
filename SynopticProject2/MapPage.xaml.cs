@@ -29,12 +29,14 @@ namespace SynopticProject2
 
             var tileLayer = OpenStreetMap.CreateTileLayer();
 
+          
+
             map.Layers.Add(tileLayer);
             map.Widgets.Add(new Mapsui.Widgets.ScaleBar.ScaleBarWidget(map) { TextAlignment = Mapsui.Widgets.Alignment.Center, HorizontalAlignment = Mapsui.Widgets.HorizontalAlignment.Left, VerticalAlignment = Mapsui.Widgets.VerticalAlignment.Bottom });
 
             var IronRange = new Pin()
             {
-                Position = new Position(12.5975f, 143.4111f),
+                Position = new Position(-12.5975f, 143.4111f),
                 Type = PinType.Pin,
                 Label = "Iron Range",
                 Address = "Zero point",
@@ -42,7 +44,7 @@ namespace SynopticProject2
 
             var DaintreeRainforest = new Pin()
             {
-                Position = new Position(16.1700f, 145.4185f),
+                Position = new Position(-16.1700f, 145.4185f),
                 Type = PinType.Pin,
                 Label = "Daintree Rainforest",
                 Address = "Zero point",
@@ -66,7 +68,7 @@ namespace SynopticProject2
 
             var MtCook = new Pin()
             {
-                Position = new Position(-43.733333f, 170.100000f),
+                Position = new Position(-15.733333f, 145.100000f),
                 Type = PinType.Pin,
                 Label = "Mt Cook",
                 Address = "Zero point",
@@ -90,9 +92,16 @@ namespace SynopticProject2
             mapView.Pins.Add(Lakefield);
             mapView.Pins.Add(OyalaThumotang);
             mapView.Pins.Add(MtCook);
+
+            var location = DependencyService.Get<LocationInteface>().getNearestLocationAsync().Result;
+
             mapView.Map = map;
-            
-          
+            mapView.MyLocationEnabled = true;
+            mapView.MyLocationFollow = true;
+            mapView.MyLocationLayer.UpdateMyLocation(new Position((double)location[0], (double)location[1]));
+
+
+
         }
     }
 }

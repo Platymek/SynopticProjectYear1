@@ -19,7 +19,11 @@ namespace SynopticProject2
         {
             InitializeComponent();
             Organism = organism;
-            Testing.Text = organism.Name;
+            OrganismName.Text = organism.Name;
+            OrganismDescription.Text = organism.Description;
+            OrganismSeverity.Text = organism.SeverityToString();
+            OrganismDanger.Text = organism.DangerToString();
+
         }
 
         public Organism Organism { get; }
