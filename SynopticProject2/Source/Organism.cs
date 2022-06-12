@@ -6,9 +6,6 @@ namespace synopticProject.Source
 {
     public abstract class Organism
     {
-        private int severity;
-        private int danger;
-
         public enum SeverityType
         {
             LeastConcern,
@@ -124,6 +121,27 @@ namespace synopticProject.Source
             Severity = (SeverityType)severity;
             Danger = (DangerType)danger;
             DependentOrganisms = dependentOrganisms;
+        }
+
+        /// <summary>
+        /// The Abstract class for fauna and flora for those who do not wish to write at all specific relationships and full enums
+        /// </summary>
+        /// <param name="name">Organism Name</param>
+        /// <param name="description">Organism Description e.g. describing what it looks like</param>
+        /// <param name="severity">How severely endangered this organism is in integer form</param>
+        /// <param name="danger">How dangerous this organism is in integer form</param>
+        /// <param name="dependentOrganisms">The organisms this organism depends on</param>
+        public Organism(
+            string name,
+            string description,
+            int severity,
+            int danger)
+        {
+            Name = name;
+            Description = description;
+            Severity = (SeverityType)severity;
+            Danger = (DangerType)danger;
+            DependentOrganisms = new Organism[] { };
         }
     }
 }

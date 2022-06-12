@@ -40,6 +40,21 @@ namespace synopticProject.Source
             : base(name, description, severity, danger, dependentOrganisms)
         { }
 
+        /// <summary>
+        /// The constructer for animals/fauna for those who do not wish to write at all specific relationships
+        /// </summary>
+        /// <param name="name">Animal Name</param>
+        /// <param name="description">Animal Description e.g. describing what it looks like</param>
+        /// <param name="severity">How severely endangered this animal is</param>
+        /// <param name="danger">How dangerous this animal is</param>
+        public Flora(
+            string name,
+            string description,
+            int severity,
+            int danger)
+            : base(name, description, severity, danger, new Organism[] { })
+        { }
+
         public override string DangerDescriptionToString()
         {
             switch (Danger)
