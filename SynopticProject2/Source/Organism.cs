@@ -34,7 +34,7 @@ namespace synopticProject.Source
 
             switch (Severity)
             {
-                case SeverityType.LeastConcern: return message + "not concerning";
+                case SeverityType.LeastConcern: return message + "not endangered";
                 case SeverityType.Vulnerable: return message + "vulnerable";
                 case SeverityType.Endangered: return message + "endangered";
                 default: return null;

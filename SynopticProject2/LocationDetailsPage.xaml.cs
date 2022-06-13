@@ -25,7 +25,7 @@ namespace SynopticProject2
             {
                 Text = nearestLocation.Name,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
-                TextColor = Xamarin.Forms.Color.FromHex("#000000")
+                FontSize = 20
             };
 
             MainLayout.Children.Add(NearestLocationNameLabel);
