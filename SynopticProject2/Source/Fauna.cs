@@ -31,7 +31,8 @@ namespace synopticProject.Source
                     return "The animal is only harmful if provoked, do not get too close or alarm in any way.";
                 case DangerType.High: 
                     return "The animal is dangerous. It will attack on sight, steer very clear of these animals.";
-                default: return null;
+                default: 
+                    return null;
             }
         }
     }

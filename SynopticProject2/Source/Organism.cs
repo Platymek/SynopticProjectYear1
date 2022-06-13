@@ -10,14 +10,14 @@ namespace synopticProject.Source
         {
             LeastConcern,
             Vulnerable,
-            Endangered
+            Endangered,
         }
 
         public enum DangerType
         {
-            High,
+            Low,
             Medium,
-            Low
+            High,
         }
 
         public string Name { get; private set; }
@@ -44,11 +44,11 @@ namespace synopticProject.Source
             string message;
             message = "The " + Name + " is ";
 
-            switch (Severity)
+            switch (Danger)
             {
-                case SeverityType.LeastConcern: return message + "not dangerous";
-                case SeverityType.Vulnerable: return message + "somewhat dangerous";
-                case SeverityType.Endangered: return message + "highly dangerous";
+                case DangerType.Low: return message + "not dangerous";
+                case DangerType.Medium: return message + "somewhat dangerous";
+                case DangerType.High: return message + "highly dangerous";
                 default: return null;
             }
         }
