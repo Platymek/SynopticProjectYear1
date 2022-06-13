@@ -6,6 +6,7 @@ namespace synopticProject.Source
 {
     internal class Flora : Organism
     {
+
         /// <summary>
         /// The constructer for animals/fauna for those who do not wish to write at all specific relationships
         /// </summary>

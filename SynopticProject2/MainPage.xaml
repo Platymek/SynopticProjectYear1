@@ -1,16 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SynopticProject2.MainPage"
-             xmlns:mapsui="clr-namespace:Mapsui.UI.Forms;assembly=Mapsui.UI.Forms">
+             x:Class="SynopticProject2.MainPage">
 
-    <StackLayout>
-        <Button Text="Click me" Clicked="Button_Clicked"/>
+    <StackLayout Margin="40">
+        <Button Text="Find Nearest Location" 
+                Clicked="Nearest_Location_Button_Clicked"
+                BackgroundColor="DarkBlue"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Margin="10"
+                FontSize="Large"/>
 
-        <mapsui:MapView x:Name="mapView"
-         VerticalOptions="FillAndExpand"
-         HorizontalOptions="Fill"
-         BackgroundColor="Gray" />
+        <Button Text="Map" 
+                Clicked="Map_Button_Clicked"
+                BackgroundColor="DarkBlue"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Margin="10"
+                FontSize="Large"/>
     </StackLayout>
 
 </ContentPage>

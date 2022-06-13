@@ -15,32 +15,23 @@ namespace SynopticProject2
 {
     public partial class MainPage : ContentPage
     {
-
         public MainPage()
         {
             InitializeComponent();
-
-            var map = new Mapsui.Map
-            {
-                CRS = "EPSG:3857",
-                Transformation = new MinimalTransformation()
-            };
-
-            var tileLayer = OpenStreetMap.CreateTileLayer();
-
-            map.Layers.Add(tileLayer);
-            map.Widgets.Add(new Mapsui.Widgets.ScaleBar.ScaleBarWidget(map) { TextAlignment = Mapsui.Widgets.Alignment.Center, HorizontalAlignment = Mapsui.Widgets.HorizontalAlignment.Left, VerticalAlignment = Mapsui.Widgets.VerticalAlignment.Bottom });
-
-            mapView.Map = map;
+           
         }
 
-        public void Button_Clicked(object sender, System.EventArgs e)
+        async void Nearest_Location_Button_Clicked(object sender, System.EventArgs e)
         {
             var location = DependencyService.Get<LocationInteface>().getNearestLocationAsync().Result;
-            Console.WriteLine(location[0]);
+
             Location nearestLocation = synopticProject.Source.Map.GetNearestLocation(new System.Numerics.Vector2((float)location[0], (float)location[1]));
-            ((Button)sender).Text = $" hello {nearestLocation.Position.X} , {nearestLocation.Position.Y}";
-           
+            await Navigation.PushAsync(new LocationDetailsPage(nearestLocation));
+        }
+
+        async void Map_Button_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new MapPage());
         }
     }
 }

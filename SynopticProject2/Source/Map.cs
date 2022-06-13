@@ -10,11 +10,25 @@ namespace synopticProject.Source
         public static Organism GetOrganism(string name)
         {
             foreach (Organism o in Organisms) if (o.Name.Equals(name)) return o;
-            throw new OrganismNotFoundException(name);
+            //throw new OrganismNotFoundException(name);
+            return null;   
+        }
+
+        public static Location GetLocation(string name)
+        {
+            foreach (Location locationToCheck in Locations)
+            {
+                if (locationToCheck.Name == name)
+                {
+                    return locationToCheck;
+                }
+            }
+            return null;
         }
 
         public static Location GetNearestLocation(Vector2 position)
         {
+            
             Location nearestLocation = Locations[0];
 
             foreach (Location currentLocation in Locations)
@@ -71,7 +85,7 @@ namespace synopticProject.Source
         };
 
         public static Organism[] Organisms { get; private set; } = new Organism[]
-        {
+    {
             // TODO: Add all organisms
             
             new Fauna("Wallaby",                    Descriptions[ 0], 0, 0),
@@ -106,17 +120,18 @@ namespace synopticProject.Source
             new Flora("Strangler Fig",              Descriptions[28], 0, 0),
             new Flora("Stinging Tree",              Descriptions[29], 0, 0),
             new Flora("Melaleuca",                  Descriptions[30], 0, 0),
-            new Flora("StringyBark",                Descriptions[31], 0, 1),
+            new Flora("Stringybark",                Descriptions[31], 0, 1),
             new Flora("Wattle",                     Descriptions[32], 0, 0),
             new Flora("Termite Mound",              Descriptions[33], 0, 0),
             new Flora("Fern",                       Descriptions[34], 0, 0),
             new Flora("Orchid",                     Descriptions[35], 0, 0),
         };
 
+
         public static Location[] Locations { get; private set; } = new Location[]
         {
             // TODO: Add all locations
-            new Location("Iron Range", new Vector2(12.5975f, 143.4111f), 1, new Organism[]
+            new Location("Iron Range", new Vector2(-12.5975f, 143.4111f), 1, new Organism[]
             { 
                 GetOrganism("Spotted Cuscus"),
                 GetOrganism("Saltwater Crocodile"),
@@ -128,7 +143,7 @@ namespace synopticProject.Source
                 GetOrganism("Fern"),
                 GetOrganism("Orchid"),
             }),
-            new Location("Daintree Rainforest", new Vector2(16.1700f, 145.4185f),       1, new Organism[]
+            new Location("Daintree Rainforest", new Vector2(-16.1700f, 145.4185f),       1, new Organism[]
             { 
                 GetOrganism("Cane Toad"),
                 GetOrganism("Dingo"),
@@ -154,7 +169,7 @@ namespace synopticProject.Source
                 GetOrganism("Feral Pig"),
                 GetOrganism("Tree Frog"),
                 GetOrganism("Melaleuca"),
-                GetOrganism("StringyBark"),
+                GetOrganism("Stringybark"),
                 GetOrganism("Wattle")
             }),
             new Location("Oyala Thumotang",     new Vector2(-13.684401f, 142.887187f),  1, new Organism[]
@@ -167,7 +182,7 @@ namespace synopticProject.Source
                 GetOrganism("Ironbark Eucalyptus"),
                 GetOrganism("Termite Mound")
             }),
-            new Location("Mt Cook",          new Vector2(-43.733333f, 170.100000f),  1, new Organism[]
+            new Location("Mt Cook",          new Vector2(-15.733333f, 145.100000f),  1, new Organism[]
             {
                 GetOrganism("Bush Turkey"),
                 GetOrganism("Amethystine Python"),
