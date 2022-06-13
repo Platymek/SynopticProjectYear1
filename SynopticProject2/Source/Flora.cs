@@ -6,12 +6,6 @@ namespace synopticProject.Source
 {
     internal class Flora : Organism
     {
-        private string v1;
-        private string v2;
-        private int v3;
-        private int v4;
-
-
 
         /// <summary>
         /// The constructer for plants/flora

@@ -3,28 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SynopticProject2.OrganismDetailsPage">
     <ContentPage.Content>
-        <StackLayout Margin="20">
-            <Label Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                FontSize="Large"
-                   x:Name="OrganismName"/>
-            <Label Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                FontSize="Medium"
-                   x:Name="OrganismDescription"/>
-            <Label Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                   FontSize="Medium"
-                   x:Name="OrganismSeverity"/>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text=""
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    FontSize="Large"
+                       x:Name="OrganismName"/>
+                <Label Text=""
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    FontSize="Medium"
+                       x:Name="OrganismDescription"/>
+                <Label Text=""
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                       FontSize="Medium"
+                       x:Name="OrganismSeverity"/>
 
-            <Label Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                   FontSize="Medium"
-                   x:Name="OrganismDanger"/>
-        </StackLayout>
+                <Label Text=""
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                       FontSize="Medium"
+                       x:Name="OrganismDanger"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

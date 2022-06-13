@@ -16,13 +16,10 @@ namespace synopticProject.Source
 
         public static Location GetLocation(string name)
         {
-            Console.WriteLine("Input Name: " + name);
             foreach (Location locationToCheck in Locations)
             {
-                Console.WriteLine("Location to check: " + locationToCheck.Name);
                 if (locationToCheck.Name == name)
                 {
-                    Console.WriteLine("Returning: " + locationToCheck.Name);
                     return locationToCheck;
                 }
             }
@@ -31,7 +28,6 @@ namespace synopticProject.Source
 
         public static Location GetNearestLocation(Vector2 position)
         {
-            Console.WriteLine("Getting nearest Location");
             
             Location nearestLocation = Locations[0];
 

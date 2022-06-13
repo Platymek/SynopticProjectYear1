@@ -13,8 +13,6 @@ namespace SynopticProject2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OrganismDetailsPage : ContentPage
     {
-
-
         public OrganismDetailsPage(Organism organism)
         {
             InitializeComponent();
@@ -22,7 +20,7 @@ namespace SynopticProject2
             OrganismName.Text = organism.Name;
             OrganismDescription.Text = organism.Description;
             OrganismSeverity.Text = organism.SeverityToString();
-            OrganismDanger.Text = organism.DangerToString();
+            OrganismDanger.Text = organism.DangerDescriptionToString();
 
         }
 

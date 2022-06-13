@@ -17,7 +17,6 @@ namespace SynopticProject2
         {
             
             InitializeComponent();
-            Console.WriteLine("LocationPage Loaded: " + nearestLocation.Name);
             StackLayout MainLayout = new StackLayout();
           
 

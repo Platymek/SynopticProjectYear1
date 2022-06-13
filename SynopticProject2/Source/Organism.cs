@@ -15,9 +15,9 @@ namespace synopticProject.Source
 
         public enum DangerType
         {
-            High,
+            Low,
             Medium,
-            Low
+            High
         }
 
         public string Name { get; private set; }
