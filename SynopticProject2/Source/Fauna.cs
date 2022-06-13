@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace synopticProject.Source
+﻿namespace synopticProject.Source
 {
     internal class Fauna : Organism
     {
+        private string v1;
+        private string v2;
+        private int v3;
+        private int v4;
+
+      
+
         /// <summary>
         /// The constructer for animals/fauna
         /// </summary>
@@ -21,7 +24,7 @@ namespace synopticProject.Source
             DangerType danger, 
             Relationship[] relationships) 
             : base(name, description, severity, danger, relationships)
-        { }
+        {}
 
         /// <summary>
         /// The constructer for animals/fauna for those who do not wish to write at all specific relationships
@@ -38,7 +41,7 @@ namespace synopticProject.Source
             DangerType danger,
             Organism[] dependentOrganisms)
             : base(name, description, severity, danger, dependentOrganisms)
-        { }
+        {}
 
         /// <summary>
         /// The constructer for animals/fauna for those who do not wish to write at all specific relationships
