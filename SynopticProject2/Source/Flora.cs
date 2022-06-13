@@ -7,40 +7,6 @@ namespace synopticProject.Source
     internal class Flora : Organism
     {
         /// <summary>
-        /// The constructer for plants/flora
-        /// </summary>
-        /// <param name="name">Plant Name</param>
-        /// <param name="description">Plant Description e.g. describing what it looks like</param>
-        /// <param name="severity">How severely endangered this plant is</param>
-        /// <param name="danger">How dangerous this plant is</param>
-        /// <param name="relationships">The relationships this plant has with others</param>
-        public Flora(
-            string name,
-            string description,
-            SeverityType severity,
-            DangerType danger,
-            Relationship[] relationships)
-            : base(name, description, severity, danger, relationships)
-        { }
-
-        /// <summary>
-        /// The Abstract class for fauna and flora for those who do not wish to write at all specific relationships
-        /// </summary>
-        /// <param name="name">Plant Name</param>
-        /// <param name="description">Plant Description e.g. describing what it looks like</param>
-        /// <param name="severity">How severely endangered this plant is</param>
-        /// <param name="danger">How dangerous this plant is</param>
-        /// <param name="dependentOrganisms">The organisms this plant depends on</param>
-        public Flora(
-            string name,
-            string description,
-            int severity,
-            int danger,
-            Organism[] dependentOrganisms)
-            : base(name, description, severity, danger, dependentOrganisms)
-        { }
-
-        /// <summary>
         /// The constructer for animals/fauna for those who do not wish to write at all specific relationships
         /// </summary>
         /// <param name="name">Animal Name</param>
@@ -52,7 +18,7 @@ namespace synopticProject.Source
             string description,
             int severity,
             int danger)
-            : base(name, description, severity, danger, new Organism[] { })
+            : base(name, description, severity, danger)
         { }
 
         public override string DangerDescriptionToString()
